@@ -506,8 +506,8 @@ function About() {
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    <section id="about" ref={ref} className="bg-cream py-28 lg:py-40 overflow-hidden">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+    <section id="about" ref={ref} className="bg-cream py-20 sm:py-28 lg:py-40 overflow-hidden">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-20 items-center">
         <Reveal className="lg:col-span-5">
           <div className="relative aspect-[4/5] bg-blush overflow-hidden">
             <motion.img
@@ -517,9 +517,9 @@ function About() {
               loading="lazy"
               className="w-full h-[115%] object-cover"
             />
-            <div className="absolute -bottom-4 -right-4 bg-blush px-6 py-4 border border-ink/10">
-              <div className="font-display italic text-2xl text-ink">Eranga</div>
-              <div className="text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft mt-1">
+            <div className="absolute bottom-3 right-3 sm:-bottom-4 sm:-right-4 bg-blush px-4 py-3 sm:px-6 sm:py-4 border border-ink/10">
+              <div className="font-display italic text-xl sm:text-2xl text-ink">Eranga</div>
+              <div className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft mt-1">
                 Founder · Hair Artist
               </div>
             </div>
@@ -528,16 +528,16 @@ function About() {
 
         <div className="lg:col-span-7">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— The artist</p>
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— The artist</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="editorial-headline text-ink text-5xl md:text-7xl lg:text-[5.5rem]">
+            <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]">
               The Art Behind
               <span className="block italic font-serif text-gold">Every Transformation.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="mt-10 space-y-6 font-serif text-xl text-ink-soft leading-relaxed max-w-[55ch]">
+            <div className="mt-6 sm:mt-10 space-y-4 sm:space-y-6 font-serif text-base sm:text-xl text-ink-soft leading-relaxed max-w-[55ch]">
               <p>
                 Eranga is a hair artist obsessed with the small things — the
                 slope of a balayage, the warmth in a tone, the way a curl falls
@@ -551,16 +551,16 @@ function About() {
             </div>
           </Reveal>
           <Reveal delay={0.3}>
-            <div className="mt-12 grid grid-cols-2 gap-8 max-w-md">
+            <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-6 sm:gap-8 max-w-md">
               <div>
-                <div className="font-display text-4xl text-ink">10+</div>
-                <div className="text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
+                <div className="font-display text-3xl sm:text-4xl text-ink">10+</div>
+                <div className="text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
                   Years Experience
                 </div>
               </div>
               <div>
-                <div className="font-display text-4xl text-ink">5★</div>
-                <div className="text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
+                <div className="font-display text-3xl sm:text-4xl text-ink">5★</div>
+                <div className="text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
                   Google Rated
                 </div>
               </div>
