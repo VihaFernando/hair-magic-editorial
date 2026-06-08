@@ -55,7 +55,7 @@ export const Route = createFileRoute("/")({
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 0.61, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 0.61, 0.36, 1] as const } },
 };
 
 function Reveal({
@@ -280,7 +280,7 @@ function SplitReveal({ text, delay = 0 }: { text: string; delay?: number }) {
       <motion.span
         initial={{ y: "110%" }}
         animate={{ y: 0 }}
-        transition={{ duration: 1.1, delay: 0.4 + delay, ease: [0.22, 0.61, 0.36, 1] }}
+        transition={{ duration: 1.1, delay: 0.4 + delay, ease: [0.22, 0.61, 0.36, 1] as const }}
         className="inline-block"
       >
         {text}
