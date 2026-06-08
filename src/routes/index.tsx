@@ -27,7 +27,8 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import salonLogo from "@/assets/salon-logo-f.jpg";
+import salonLogo from "@/assets/logo-primary.png";
+import footerLogo from "@/assets/footer-logo.png";
 import heroImg from "@/assets/hero.jpg";
 import erangaImg from "@/assets/eranga.jpg";
 import g1 from "@/assets/gallery-1.jpg";
@@ -1075,7 +1076,7 @@ function Footer() {
         {/* Brand + tagline — full width top row */}
         <div className="border-b border-blush/10 pb-12 sm:pb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div>
-            <img src={salonLogo} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto brightness-0 invert" />
+            <img src={footerLogo} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto" />
             <p className="font-serif italic text-2xl sm:text-3xl text-blush/80 mt-5 max-w-sm leading-snug">
               Where Hair Meets<br />
               <span className="text-gold">Perfection.</span>
