@@ -9,19 +9,27 @@ import {
   Clock,
   ArrowUpRight,
   ArrowRight,
+  ArrowLeft,
   Menu,
   X,
+  Sun,
+  Waves,
+  Sparkles,
+  Palette,
+  Droplets,
+  Crown,
+  type LucideIcon,
 } from "lucide-react";
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import salonLogo from "@/assets/salon-logo-f.jpg";
 import heroImg from "@/assets/hero.jpg";
-import aboutImg from "@/assets/about.jpg";
-import sBalayage from "@/assets/service-balayage.jpg";
-import sOmbre from "@/assets/service-ombre.jpg";
-import sBlonde from "@/assets/service-blonde.jpg";
-import sColor from "@/assets/service-color.jpg";
-import sTreatment from "@/assets/service-treatment.jpg";
-import sBridal from "@/assets/service-bridal.jpg";
+import erangaImg from "@/assets/eranga.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
@@ -218,17 +226,17 @@ function Hero() {
 
         <div className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-1 px-4 pt-24 sm:px-6 sm:pt-28 lg:px-10 lg:pt-24">
           <div className="grid w-full content-center items-center gap-8 md:gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
-            <div className="relative z-10 lg:col-span-6 xl:col-span-5">
+            <div className="relative z-10 mx-auto w-full max-w-2xl lg:col-span-6 lg:mx-0 lg:max-w-none xl:col-span-5">
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="editorial-eyebrow mb-5 text-center text-[0.6rem] text-ink-soft sm:mb-6 sm:text-left sm:text-[0.7rem]"
+                className="editorial-eyebrow mb-5 text-center text-[0.6rem] text-ink-soft sm:mb-6 sm:text-[0.7rem] lg:text-left"
               >
                 ✦ Luxury Hair Studio · Sri Lanka
               </motion.p>
 
-              <h1 className="editorial-headline mx-auto max-w-[11ch] text-center text-[2.85rem] leading-[0.88] text-ink sm:mx-0 sm:text-left sm:text-[4.25rem] md:max-w-[12ch] md:text-[4.8rem] lg:max-w-[10ch] lg:text-[5.1vw] xl:text-[5.4vw]">
+              <h1 className="editorial-headline mx-auto max-w-[11ch] text-center text-[2.85rem] leading-[0.88] text-ink sm:text-[4.25rem] md:max-w-[12ch] md:text-[4.8rem] lg:mx-0 lg:max-w-[10ch] lg:text-left lg:text-[5.1vw] xl:text-[5.4vw]">
                 <SplitReveal text="Hair Experience" />
                 <span className="mt-1 block italic font-serif text-gold">
                   <SplitReveal text="Like No Other." delay={0.2} />
@@ -239,7 +247,7 @@ function Hero() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.1 }}
-                className="mx-auto mt-6 max-w-[34ch] text-center font-serif text-[0.98rem] leading-relaxed text-ink-soft sm:mx-0 sm:mt-7 sm:text-left sm:text-lg md:max-w-[40ch]"
+                className="mx-auto mt-6 max-w-[34ch] text-center font-serif text-[0.98rem] leading-relaxed text-ink-soft sm:mt-7 sm:text-lg md:max-w-[40ch] lg:mx-0 lg:text-left"
               >
                 Luxury hair transformations <em className="text-gold">by Eranga</em> - crafted with
                 the care of a couture atelier.
@@ -249,18 +257,18 @@ function Hero() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.4 }}
-                className="mt-8 flex flex-col items-center gap-4 sm:mt-9 sm:items-start sm:flex-row sm:flex-wrap sm:gap-4"
+                className="mt-8 flex flex-col items-center gap-4 sm:mt-9 md:flex-row md:flex-wrap md:justify-center lg:items-start lg:justify-start"
               >
                 <a
                   href="#contact"
-                  className="group inline-flex min-w-[16rem] items-center justify-center gap-3 bg-ink px-6 py-3.5 text-[0.65rem] uppercase tracking-[0.25em] text-blush transition-colors duration-500 hover:bg-gold hover:text-ink sm:min-w-0 sm:justify-start sm:px-8 sm:py-4 sm:text-xs"
+                  className="group inline-flex min-w-[16rem] items-center justify-center gap-3 bg-ink px-6 py-3.5 text-[0.65rem] uppercase tracking-[0.25em] text-blush transition-colors duration-500 hover:bg-gold hover:text-ink sm:min-w-0 sm:px-8 sm:py-4 sm:text-xs lg:justify-start"
                 >
                   Book Appointment
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#gallery"
-                  className="group inline-flex min-w-[16rem] items-center justify-center gap-3 border border-ink px-6 py-3.5 text-[0.65rem] uppercase tracking-[0.25em] text-ink transition-colors duration-500 hover:bg-ink hover:text-blush sm:min-w-0 sm:justify-start sm:px-8 sm:py-4 sm:text-xs"
+                  className="group inline-flex min-w-[16rem] items-center justify-center gap-3 border border-ink px-6 py-3.5 text-[0.65rem] uppercase tracking-[0.25em] text-ink transition-colors duration-500 hover:bg-ink hover:text-blush sm:min-w-0 sm:px-8 sm:py-4 sm:text-xs lg:justify-start"
                 >
                   View Transformations
                 </a>
@@ -378,16 +386,66 @@ function Stats() {
 /* Services                                    */
 /* ─────────────────────────────────────────── */
 
-const SERVICES = [
-  { no: "01", name: "Balayage", img: sBalayage, blurb: "Hand-painted highlights for a sun-kissed glow that grows out beautifully." },
-  { no: "02", name: "Ombre", img: sOmbre, blurb: "A seamless gradient — depth at the roots, light at the ends." },
-  { no: "03", name: "Blonde Transformations", img: sBlonde, blurb: "From any base to your most luminous blonde, protected and pristine." },
-  { no: "04", name: "Hair Coloring", img: sColor, blurb: "Custom-mixed couture color crafted for your skin, eyes and lifestyle." },
-  { no: "05", name: "Hair Treatments", img: sTreatment, blurb: "Salon rituals that restore shine, strength and softness." },
-  { no: "06", name: "Bridal Hair Styling", img: sBridal, blurb: "Editorial bridal styling — timeless, photogenic, unforgettable." },
+const SERVICES: { no: string; name: string; blurb: string; icon: LucideIcon }[] = [
+  { no: "01", name: "Balayage", icon: Sun, blurb: "Hand-painted highlights for a sun-kissed glow that grows out beautifully." },
+  { no: "02", name: "Ombre", icon: Waves, blurb: "A seamless gradient — depth at the roots, light at the ends." },
+  { no: "03", name: "Blonde Transformations", icon: Sparkles, blurb: "From any base to your most luminous blonde, protected and pristine." },
+  { no: "04", name: "Hair Coloring", icon: Palette, blurb: "Custom-mixed couture color crafted for your skin, eyes and lifestyle." },
+  { no: "05", name: "Hair Treatments", icon: Droplets, blurb: "Salon rituals that restore shine, strength and softness." },
+  { no: "06", name: "Bridal Hair Styling", icon: Crown, blurb: "Editorial bridal styling — timeless, photogenic, unforgettable." },
 ];
 
 function Services() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    onSelect();
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const startAutoplay = () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+      autoplayRef.current = setInterval(() => api.scrollNext(), 4000);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+        autoplayRef.current = null;
+      }
+    };
+
+    startAutoplay();
+
+    const container = api.containerNode();
+    container?.addEventListener("mouseenter", stopAutoplay);
+    container?.addEventListener("mouseleave", startAutoplay);
+    container?.addEventListener("focusin", stopAutoplay);
+    container?.addEventListener("focusout", startAutoplay);
+
+    return () => {
+      stopAutoplay();
+      container?.removeEventListener("mouseenter", stopAutoplay);
+      container?.removeEventListener("mouseleave", startAutoplay);
+      container?.removeEventListener("focusin", stopAutoplay);
+      container?.removeEventListener("focusout", startAutoplay);
+    };
+  }, [api]);
+
   return (
     <section id="services" className="bg-blush py-20 sm:py-28 lg:py-40">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
@@ -407,35 +465,86 @@ function Services() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-10 sm:gap-y-16">
-          {SERVICES.map((s, i) => (
-            <Reveal key={s.no} delay={(i % 3) * 0.1}>
-              <article className="group cursor-pointer">
-                <div className="hover-zoom relative aspect-[3/4] bg-cream">
-                  <img
-                    src={s.img}
-                    alt={s.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
+        <Reveal delay={0.15}>
+          <div className="relative">
+            <Carousel
+              setApi={setApi}
+              opts={{ align: "start", loop: true }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4 sm:-ml-6">
+                {SERVICES.map((s) => {
+                  const Icon = s.icon;
+                  return (
+                    <CarouselItem
+                      key={s.no}
+                      className="pl-4 sm:pl-6 basis-full md:basis-1/2 lg:basis-1/3"
+                    >
+                      <article className="group flex h-full min-h-[280px] flex-col border border-ink/10 bg-cream p-6 transition-colors duration-500 hover:border-gold/40 sm:min-h-[300px] sm:p-8">
+                        <div className="mb-6 flex items-start justify-between gap-4">
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-gold/25 bg-blush transition-colors duration-500 group-hover:border-gold/50 group-hover:bg-gold/10">
+                            <Icon className="h-5 w-5 text-gold" strokeWidth={1.5} />
+                          </div>
+                          <span className="editorial-eyebrow text-ink/25">{s.no}</span>
+                        </div>
+                        <h3 className="font-display text-2xl text-ink leading-tight sm:text-3xl">
+                          {s.name}
+                        </h3>
+                        <p className="mt-3 flex-1 font-serif text-sm leading-relaxed text-ink-soft sm:mt-4 sm:text-base">
+                          {s.blurb}
+                        </p>
+                        <div className="mt-6 h-px w-0 bg-gold transition-all duration-500 group-hover:w-full" />
+                      </article>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+            </Carousel>
+
+            <div className="mt-8 sm:mt-10 flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center justify-center gap-3 sm:justify-start">
+                {SERVICES.map((s, i) => (
+                  <button
+                    key={s.no}
+                    type="button"
+                    aria-label={`Go to ${s.name}`}
+                    aria-current={i === current ? "true" : undefined}
+                    onClick={() => api?.scrollTo(i)}
+                    className={`h-px transition-all duration-500 ${
+                      i === current
+                        ? "w-10 bg-gold"
+                        : "w-6 bg-ink/20 hover:bg-ink/40"
+                    }`}
                   />
-                  <div className="absolute top-4 left-4 font-display text-blush text-sm tracking-widest mix-blend-difference">
-                    {s.no}
-                  </div>
-                  <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-500" />
-                  <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-blush flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                    <ArrowUpRight className="w-4 h-4 text-ink" />
-                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-center justify-center gap-4 sm:justify-end sm:gap-6">
+                <span className="editorial-eyebrow text-ink-soft tabular-nums">
+                  {String(current + 1).padStart(2, "0")} / {String(SERVICES.length).padStart(2, "0")}
+                </span>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <button
+                    type="button"
+                    aria-label="Previous service"
+                    onClick={() => api?.scrollPrev()}
+                    className="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center border border-ink/20 text-ink transition-colors duration-500 hover:bg-ink hover:text-blush"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next service"
+                    onClick={() => api?.scrollNext()}
+                    className="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center border border-ink/20 text-ink transition-colors duration-500 hover:bg-ink hover:text-blush"
+                  >
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
                 </div>
-                <div className="mt-4 sm:mt-6 flex items-start justify-between gap-6">
-                  <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-ink leading-tight">
-                    {s.name}
-                  </h3>
-                </div>
-                <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-ink-soft leading-relaxed max-w-sm">{s.blurb}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -529,7 +638,7 @@ function About() {
           <div className="relative aspect-[4/5] bg-blush overflow-hidden">
             <motion.img
               style={{ y }}
-              src={aboutImg}
+              src={erangaImg}
               alt="Eranga — Founder"
               loading="lazy"
               className="w-full h-[115%] object-cover"
@@ -630,72 +739,6 @@ function Testimonials() {
 }
 
 /* ─────────────────────────────────────────── */
-/* Instagram scroller                          */
-/* ─────────────────────────────────────────── */
-
-function InstagramRow() {
-  useEffect(() => {
-    const id = "elfsight-instagram-feed-script";
-    if (document.getElementById(id)) return;
-
-    const script = document.createElement("script");
-    script.id = id;
-    script.async = true;
-    script.src = "https://elfsightcdn.com/platform.js";
-    document.body.appendChild(script);
-  }, []);
-
-  return (
-    <section className="bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 mb-8 sm:mb-12">
-        <Reveal>
-          <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— @hairmagic_by_eranga</p>
-          <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl">
-            Latest from
-            <span className="italic font-serif text-gold"> Instagram.</span>
-          </h2>
-        </Reveal>
-        <Reveal delay={0.15}>
-          <a
-            href="https://www.instagram.com/hairmagic_by_eranga/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-ink link-underline text-xs sm:text-sm tracking-[0.25em] uppercase"
-          >
-            <Instagram className="w-4 h-4" />
-            Follow on Instagram
-          </a>
-        </Reveal>
-      </div>
-
-      <div className="px-4 sm:px-6 lg:px-10">
-        <div className="mx-auto w-full max-w-[1400px] overflow-hidden rounded-[2rem] border border-ink/10 bg-[#fcf8f4] p-4 shadow-[0_24px_80px_rgba(53,35,26,0.08)] sm:p-6 lg:p-8">
-          <div className="mb-5 sm:mb-6 flex items-center justify-between gap-4">
-            <div>
-              <p className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.3em] uppercase text-gold mb-2">
-                Social feed
-              </p>
-              <h3 className="font-display text-2xl sm:text-3xl text-ink">Recent Instagram posts</h3>
-            </div>
-            <a
-              href="https://www.instagram.com/hairmagic_by_eranga/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 text-ink link-underline text-xs sm:text-sm tracking-[0.25em] uppercase"
-            >
-              <Instagram className="w-4 h-4" />
-              Open profile
-            </a>
-          </div>
-
-          <div className="elfsight-app-e4c6fc60-f4d4-4f51-995c-2c0fbad27d42 min-h-[520px]" data-elfsight-app-lazy />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────── */
 /* TikTok                                      */
 /* ─────────────────────────────────────────── */
 
@@ -712,7 +755,7 @@ function TikTokSection() {
         cite="https://www.tiktok.com/@hairmagicbyeranga"
         data-unique-id="hairmagicbyeranga"
         data-embed-type="creator"
-        style="max-width: 780px; min-width: 288px;"
+        style="max-width: 100%; min-width: 325px; width: 100%;"
       >
         <section>
           <a
@@ -738,8 +781,8 @@ function TikTokSection() {
 
   return (
     <section className="bg-blush py-20 sm:py-28 lg:py-36">
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 items-center">
-        <Reveal className="lg:col-span-6">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 items-start">
+        <Reveal className="lg:col-span-5">
           <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— On TikTok</p>
           <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl">
             Watch The
@@ -760,10 +803,11 @@ function TikTokSection() {
           </a>
         </Reveal>
 
-        <div className="lg:col-span-6">
-          <div className="glass-card p-4 md:p-6 mx-auto max-w-[400px]">
+        <div className="w-full lg:col-span-7">
+          <div className="glass-card h-fit w-full p-5 sm:p-6 md:p-8 lg:p-10">
             <div
               ref={embedRef}
+              className="h-fit w-full [&_.tiktok-embed]:!mx-0 [&_.tiktok-embed]:!mb-0 [&_.tiktok-embed]:!max-w-full [&_.tiktok-embed]:!w-full [&_iframe]:!block [&_iframe]:!max-w-full [&_iframe]:!w-full"
               aria-label="TikTok creator embed for Hair Magic by Eranga"
             />
           </div>
@@ -987,7 +1031,6 @@ function Home() {
       <Gallery />
       <About />
       <Testimonials />
-      <InstagramRow />
       <TikTokSection />
       <Location />
       <FinalCTA />

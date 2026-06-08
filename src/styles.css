@@ -110,13 +110,16 @@
 }
 
 /* ─── Editorial utilities ─── */
-@utility font-display { font-family: var(--font-display); }
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
 @utility font-serif   { font-family: var(--font-serif); }
 @utility font-editorial { font-family: var(--font-editorial); }
 
 @utility editorial-headline {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 0.9;
 }
