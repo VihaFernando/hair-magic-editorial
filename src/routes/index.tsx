@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Hair Magic by Eranga" },
       {
         property: "og:description",
-        content: "Luxury Hair Transformations by Eranga — Where Hair Meets Perfection.",
+        content: "Luxury Hair Transformations by Eranga - Where Hair Meets Perfection.",
       },
     ],
   }),
@@ -241,7 +241,7 @@ function Hero() {
                 transition={{ duration: 0.8, delay: 1.1 }}
                 className="mx-auto mt-6 max-w-[34ch] text-center font-serif text-[0.98rem] leading-relaxed text-ink-soft sm:mx-0 sm:mt-7 sm:text-left sm:text-lg md:max-w-[40ch]"
               >
-                Luxury hair transformations <em className="text-gold">by Eranga</em> — crafted with
+                Luxury hair transformations <em className="text-gold">by Eranga</em> - crafted with
                 the care of a couture atelier.
               </motion.p>
 
