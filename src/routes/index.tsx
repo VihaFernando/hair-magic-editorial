@@ -599,39 +599,39 @@ const REVIEWS = [
 
 function Testimonials() {
   return (
-    <section className="relative bg-blush py-28 lg:py-40 overflow-hidden">
+    <section className="relative bg-blush py-20 sm:py-28 lg:py-40 overflow-hidden">
       {/* decorative gradient */}
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gold/20 blur-[120px]" />
       <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-gold/15 blur-[120px]" />
 
-      <div className="relative max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="text-center mb-20">
+      <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center mb-12 sm:mb-20">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— Social proof</p>
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— Social proof</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="editorial-headline text-ink text-5xl md:text-7xl lg:text-8xl">
+            <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               Loved By Our
               <span className="italic font-serif text-gold"> Community.</span>
             </h2>
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
           {REVIEWS.map((r, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <article className="glass-card p-10 h-full flex flex-col">
-                <div className="flex gap-1 text-gold mb-6">
+              <article className="glass-card p-6 sm:p-10 h-full flex flex-col">
+                <div className="flex gap-1 text-gold mb-4 sm:mb-6">
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <blockquote className="font-serif text-2xl text-ink leading-snug flex-1">
+                <blockquote className="font-serif text-lg sm:text-2xl text-ink leading-snug flex-1">
                   “{r.quote}”
                 </blockquote>
-                <footer className="mt-8 pt-6 border-t border-ink/10 flex items-center justify-between">
-                  <div className="font-display text-lg text-ink">{r.name}</div>
-                  <div className="text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft">
+                <footer className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-ink/10 flex items-center justify-between">
+                  <div className="font-display text-base sm:text-lg text-ink">{r.name}</div>
+                  <div className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft">
                     {r.src}
                   </div>
                 </footer>
