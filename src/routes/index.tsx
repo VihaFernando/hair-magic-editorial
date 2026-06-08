@@ -791,7 +791,87 @@ function Testimonials() {
 /* TikTok                                      */
 /* ─────────────────────────────────────────── */
 
+const TIKTOK_EMBED_SCRIPT_ID = "tiktok-embed-script";
+
+function loadTikTokEmbedScript() {
+  return new Promise<void>((resolve, reject) => {
+    document.getElementById(TIKTOK_EMBED_SCRIPT_ID)?.remove();
+
+    const script = document.createElement("script");
+    script.id = TIKTOK_EMBED_SCRIPT_ID;
+    script.src = `https://www.tiktok.com/embed.js?t=${Date.now()}`;
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("TikTok embed script failed to load"));
+    document.body.appendChild(script);
+  });
+}
+
+function patchTikTokEmbed(blockquote: HTMLElement) {
+  const observer = new MutationObserver(() => {
+    const iframe = blockquote.querySelector("iframe");
+    const dummy = blockquote.querySelector("[data-tiktok-dummy]");
+
+    if (iframe && !dummy) {
+      const placeholder = document.createElement("div");
+      placeholder.setAttribute("data-tiktok-dummy", "");
+      placeholder.hidden = true;
+      blockquote.insertBefore(placeholder, iframe);
+    }
+  });
+
+  observer.observe(blockquote, { childList: true });
+  return () => observer.disconnect();
+}
+
 function TikTokSection() {
+  const embedRef = useRef<HTMLQuoteElement>(null);
+
+  useEffect(() => {
+    const blockquote = embedRef.current;
+    if (!blockquote) return;
+
+    let cancelled = false;
+    let retryTimer: ReturnType<typeof setTimeout> | undefined;
+    let attempts = 0;
+    const maxAttempts = 6;
+    const unpatch = patchTikTokEmbed(blockquote);
+
+    const hasIframe = () => Boolean(blockquote.querySelector("iframe"));
+
+    const tryLoad = async () => {
+      if (cancelled || hasIframe()) return;
+
+      attempts += 1;
+
+      try {
+        await loadTikTokEmbedScript();
+        await new Promise((resolve) => window.setTimeout(resolve, 600));
+
+        if (!cancelled && !hasIframe() && attempts < maxAttempts) {
+          retryTimer = window.setTimeout(tryLoad, 800 * attempts);
+        }
+      } catch {
+        if (!cancelled && attempts < maxAttempts) {
+          retryTimer = window.setTimeout(tryLoad, 1000 * attempts);
+        }
+      }
+    };
+
+    const frame = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        void tryLoad();
+      });
+    });
+
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(frame);
+      if (retryTimer) window.clearTimeout(retryTimer);
+      unpatch();
+    };
+  }, []);
+
   return (
     <section className="bg-blush py-20 sm:py-28 lg:py-36">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 items-start">
@@ -818,25 +898,27 @@ function TikTokSection() {
 
         <div className="w-full lg:col-span-7">
           <div className="glass-card h-fit w-full p-5 sm:p-6 md:p-8 lg:p-10">
-            {/* @ts-expect-error — blockquote with TikTok-specific data attributes */}
-            <blockquote
-              className="tiktok-embed"
-              cite="https://www.tiktok.com/@hairmagicbyeranga"
-              data-unique-id="hairmagicbyeranga"
-              data-embed-type="creator"
-              data-embed-from="oembed"
-              style={{ maxWidth: "100%", minWidth: 325 }}
-            >
-              <section>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.tiktok.com/@hairmagicbyeranga?refer=creator_embed"
-                >
-                  @hairmagicbyeranga
-                </a>
-              </section>
-            </blockquote>
+            <div className="h-fit w-full [&_.tiktok-embed]:!mx-0 [&_.tiktok-embed]:!mb-0 [&_.tiktok-embed]:!max-w-full [&_.tiktok-embed]:!w-full [&_iframe]:!block [&_iframe]:!max-w-full [&_iframe]:!w-full">
+              <blockquote
+                ref={embedRef}
+                className="tiktok-embed"
+                cite="https://www.tiktok.com/@hairmagicbyeranga"
+                data-unique-id="hairmagicbyeranga"
+                data-embed-type="creator"
+                data-embed-from="oembed"
+                style={{ maxWidth: "100%", minWidth: 325, width: "100%" }}
+              >
+                <section>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.tiktok.com/@hairmagicbyeranga?refer=creator_embed"
+                  >
+                    @hairmagicbyeranga
+                  </a>
+                </section>
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
