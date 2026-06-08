@@ -460,7 +460,7 @@ function Gallery() {
         {/* Masonry via CSS columns */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 [column-fill:_balance]">
           {GALLERY.map((g, i) => (
-            <Reveal key={i} delay={(i % 3) * 0.08} className="mb-6 break-inside-avoid">
+            <Reveal key={i} delay={(i % 3) * 0.08} className="mb-4 sm:mb-6 break-inside-avoid">
               <figure className="group relative hover-zoom">
                 <img src={g.src} alt={g.label} loading="lazy" className="w-full h-auto" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
