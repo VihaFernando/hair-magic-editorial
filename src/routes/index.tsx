@@ -117,9 +117,9 @@ function Nav() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 flex items-center justify-between">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-10 md:h-12 w-auto" />
+          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-8 sm:h-10 md:h-12 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-10">
