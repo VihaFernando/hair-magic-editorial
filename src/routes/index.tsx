@@ -9,12 +9,11 @@ import {
   Clock,
   ArrowUpRight,
   ArrowRight,
-  Star,
   Menu,
   X,
 } from "lucide-react";
 
-import logoAsset from "@/assets/logo.png.asset.json";
+import salonLogo from "@/assets/salon-logo-f.jpg";
 import heroImg from "@/assets/hero.jpg";
 import aboutImg from "@/assets/about.jpg";
 import sBalayage from "@/assets/service-balayage.jpg";
@@ -111,15 +110,14 @@ function Nav() {
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.2 }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-blush/85 backdrop-blur-xl border-b border-ink/5 py-3"
-          : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
+        ? "bg-blush/85 backdrop-blur-xl border-b border-ink/5 py-3"
+        : "bg-transparent py-6"
+        }`}
     >
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-8 sm:h-10 md:h-12 w-auto" />
+          <img src={salonLogo} alt="Hair Magic by Eranga" className="h-8 sm:h-10 md:h-12 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-10">
@@ -191,84 +189,101 @@ function Nav() {
 function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
-    <section id="home" ref={ref} className="relative h-[100svh] min-h-[560px] md:min-h-[720px] overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0">
-        <img
-          src={heroImg}
-          alt="Luxury hair transformation"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-blush/40 via-blush/20 to-blush/80" />
-        <div className="absolute inset-0 bg-ink/10" />
-      </motion.div>
-
-      <motion.div style={{ opacity }} className="relative z-10 h-full flex flex-col">
-        <div className="flex-1 flex items-center pt-20 md:pt-0">
-          <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 w-full">
+    <section
+      id="home"
+      ref={ref}
+      className="relative bg-[#f5f0eb] min-h-[100svh] overflow-hidden flex flex-col"
+    >
+      <motion.div style={{ opacity }} className="flex-1 flex flex-col">
+        {/* Main split layout */}
+        <div className="flex-1 flex flex-col lg:flex-row items-stretch pt-20 lg:pt-20 min-h-0">
+          {/* Left — text */}
+          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-24 py-12 lg:py-0 lg:w-[52%] xl:w-[48%] z-10">
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="editorial-eyebrow text-ink-soft mb-4 sm:mb-6 text-[0.6rem] sm:text-[0.7rem]"
             >
               ✦ Luxury Hair Studio · Sri Lanka
             </motion.p>
 
-            <h1 className="editorial-headline text-ink text-[3.25rem] sm:text-[5rem] md:text-[10vw] lg:text-[8.5vw] leading-[0.88] max-w-[1300px]">
-              <SplitReveal text="Where Hair" />
+            <h1 className="editorial-headline text-ink text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[5vw] xl:text-[5.5vw] leading-[0.9] max-w-[620px]">
+              <SplitReveal text="Hair Experience" />
               <span className="block italic font-serif text-gold mt-1">
-                <SplitReveal text="Meets Perfection." delay={0.25} />
+                <SplitReveal text="Like No Other." delay={0.2} />
               </span>
             </h1>
 
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+              className="mt-5 sm:mt-8 font-serif text-base sm:text-lg text-ink-soft max-w-[38ch] leading-snug"
+            >
+              Luxury hair transformations <em className="text-gold">by Eranga</em> — crafted with
+              the care of a couture atelier.
+            </motion.p>
+
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
-              className="mt-6 sm:mt-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 max-w-[1100px]"
+              className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4"
             >
-              <p className="font-serif text-base sm:text-xl md:text-2xl text-ink-soft max-w-md leading-snug">
-                Luxury hair transformations <em className="text-gold">by Eranga</em> — crafted with
-                the care of a couture atelier.
-              </p>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-3 bg-ink text-blush px-6 py-3.5 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
+              >
+                Book Appointment
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+              <a
+                href="#gallery"
+                className="group inline-flex items-center gap-3 border border-ink text-ink px-6 py-3.5 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-ink hover:text-blush transition-colors duration-500"
+              >
+                View Transformations
+              </a>
+            </motion.div>
+          </div>
 
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                <a
-                  href="#contact"
-                  className="group inline-flex items-center gap-3 bg-ink text-blush px-5 py-3 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
-                >
-                  Book Appointment
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-                <a
-                  href="#gallery"
-                  className="group inline-flex items-center gap-3 border border-ink text-ink px-5 py-3 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-ink hover:text-blush transition-colors duration-500"
-                >
-                  View Transformations
-                </a>
-              </div>
+          {/* Right — image as visible element */}
+          <div className="relative lg:flex-1 flex items-end justify-center lg:justify-end overflow-hidden">
+            {/* Decorative oval backdrop */}
+            <div className="absolute bottom-0 right-0 lg:right-[-4%] w-[85%] lg:w-[82%] h-[90%] bg-[#ece6df] rounded-t-[50%] rounded-b-none" />
+            <motion.div
+              style={{ y: imgY }}
+              className="relative z-10 w-[60%] sm:w-[46%] lg:w-[68%] max-w-[440px] lg:max-w-none lg:h-full flex items-end"
+            >
+              <img
+                src={heroImg}
+                alt="Hair Experience Like No Other"
+                className="w-full h-auto lg:h-full lg:max-h-[75vh] object-cover object-top"
+              />
             </motion.div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="pb-10 flex justify-center"
-        >
-          <div className="flex flex-col items-center gap-3 text-ink-soft">
-            <span className="text-[0.65rem] tracking-[0.4em] uppercase">Scroll</span>
-            <div className="relative h-12 w-px bg-ink/20 overflow-hidden">
-              <span className="absolute inset-x-0 top-0 h-3 bg-ink scroll-dot" />
-            </div>
+        {/* Marquee — visible in first viewport */}
+        <div className="border-t border-ink/15 bg-[#f5f0eb] py-3 sm:py-4 overflow-hidden shrink-0">
+          <div className="flex marquee-track whitespace-nowrap">
+            {[...Array(3)].flatMap((_, r) =>
+              ["Balayage", "Ombre", "Blonde Transformations", "Bridal Styling", "Hair Treatments", "Premium Coloring"].map((t, i) => (
+                <span
+                  key={`${r}-${i}`}
+                  className="font-display italic text-base sm:text-xl md:text-2xl text-ink mx-5 sm:mx-8 inline-flex items-center gap-4 sm:gap-6"
+                >
+                  {t}
+                  <span className="text-gold not-italic">✦</span>
+                </span>
+              ))
+            )}
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
@@ -572,32 +587,19 @@ function About() {
   );
 }
 
-/* ─────────────────────────────────────────── */
-/* Testimonials                                */
-/* ─────────────────────────────────────────── */
-
-const REVIEWS = [
-  {
-    quote:
-      "Eranga is a genuine artist. My balayage looks unreal — I've never had so many compliments in my life.",
-    name: "Nadeesha P.",
-    src: "Google Review",
-  },
-  {
-    quote:
-      "I flew in from Dubai for my wedding hair. Worth every mile. The most luxurious salon experience.",
-    name: "Aisha R.",
-    src: "Instagram",
-  },
-  {
-    quote:
-      "Walked in with damaged hair, walked out feeling like a magazine cover. This place is pure magic.",
-    name: "Hiruni W.",
-    src: "Google Review",
-  },
-];
-
 function Testimonials() {
+  useEffect(() => {
+    if (document.querySelector('script[data-elfsight-google-reviews]')) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    script.setAttribute("data-elfsight-google-reviews", "true");
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section className="relative bg-blush py-20 sm:py-28 lg:py-40 overflow-hidden">
       {/* decorative gradient */}
@@ -617,27 +619,8 @@ function Testimonials() {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
-          {REVIEWS.map((r, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <article className="glass-card p-6 sm:p-10 h-full flex flex-col">
-                <div className="flex gap-1 text-gold mb-4 sm:mb-6">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <blockquote className="font-serif text-lg sm:text-2xl text-ink leading-snug flex-1">
-                  “{r.quote}”
-                </blockquote>
-                <footer className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-ink/10 flex items-center justify-between">
-                  <div className="font-display text-base sm:text-lg text-ink">{r.name}</div>
-                  <div className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft">
-                    {r.src}
-                  </div>
-                </footer>
-              </article>
-            </Reveal>
-          ))}
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-ink/10 bg-cream/80 p-4 shadow-[0_24px_80px_rgba(53,35,26,0.08)] sm:p-6 lg:p-8">
+          <div className="elfsight-app-e8f49eae-d1b3-41b3-bb45-5fbf7107b4f0 min-h-[520px]" data-elfsight-app-lazy />
         </div>
       </div>
     </section>
@@ -649,7 +632,17 @@ function Testimonials() {
 /* ─────────────────────────────────────────── */
 
 function InstagramRow() {
-  const IMGS = [g1, g3, g6, g2, g5, g4, g1, g6];
+  useEffect(() => {
+    const id = "elfsight-instagram-feed-script";
+    if (document.getElementById(id)) return;
+
+    const script = document.createElement("script");
+    script.id = id;
+    script.async = true;
+    script.src = "https://elfsightcdn.com/platform.js";
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section className="bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 mb-8 sm:mb-12">
@@ -673,22 +666,27 @@ function InstagramRow() {
         </Reveal>
       </div>
 
-      <div className="overflow-x-auto scrollbar-none px-4 sm:px-6 lg:px-10">
-        <div className="flex gap-4 sm:gap-5 pb-4 min-w-max">
-          {IMGS.map((src, i) => (
+      <div className="px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto w-full max-w-[1400px] overflow-hidden rounded-[2rem] border border-ink/10 bg-[#fcf8f4] p-4 shadow-[0_24px_80px_rgba(53,35,26,0.08)] sm:p-6 lg:p-8">
+          <div className="mb-5 sm:mb-6 flex items-center justify-between gap-4">
+            <div>
+              <p className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.3em] uppercase text-gold mb-2">
+                Social feed
+              </p>
+              <h3 className="font-display text-2xl sm:text-3xl text-ink">Recent Instagram posts</h3>
+            </div>
             <a
-              key={i}
               href="https://www.instagram.com/hairmagic_by_eranga/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-[220px] sm:w-[280px] md:w-[340px] aspect-[4/5] flex-shrink-0 hover-zoom"
+              className="hidden sm:inline-flex items-center gap-2 text-ink link-underline text-xs sm:text-sm tracking-[0.25em] uppercase"
             >
-              <img src={src} alt="" loading="lazy" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/30 transition-colors duration-500 flex items-center justify-center">
-                <Instagram className="w-8 h-8 text-blush opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+              <Instagram className="w-4 h-4" />
+              Open profile
             </a>
-          ))}
+          </div>
+
+          <div className="elfsight-app-e4c6fc60-f4d4-4f51-995c-2c0fbad27d42 min-h-[520px]" data-elfsight-app-lazy />
         </div>
       </div>
     </section>
@@ -700,14 +698,40 @@ function InstagramRow() {
 /* ─────────────────────────────────────────── */
 
 function TikTokSection() {
+  const embedRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const id = "tiktok-embed-script";
-    if (document.getElementById(id)) return;
+    const container = embedRef.current;
+    if (!container) return;
+
+    container.innerHTML = `
+      <blockquote
+        class="tiktok-embed"
+        cite="https://www.tiktok.com/@hairmagicbyeranga"
+        data-unique-id="hairmagicbyeranga"
+        data-embed-type="creator"
+        style="max-width: 780px; min-width: 288px;"
+      >
+        <section>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.tiktok.com/@hairmagicbyeranga"
+          >
+            @hairmagicbyeranga
+          </a>
+        </section>
+      </blockquote>
+    `;
+
     const s = document.createElement("script");
-    s.id = id;
     s.async = true;
     s.src = "https://www.tiktok.com/embed.js";
-    document.body.appendChild(s);
+    container.appendChild(s);
+
+    return () => {
+      container.innerHTML = "";
+    };
   }, []);
 
   return (
@@ -734,23 +758,14 @@ function TikTokSection() {
           </a>
         </Reveal>
 
-        <Reveal delay={0.15} className="lg:col-span-6">
+        <div className="lg:col-span-6">
           <div className="glass-card p-4 md:p-6 mx-auto max-w-[400px]">
-            <blockquote
-              className="tiktok-embed"
-              cite="https://www.tiktok.com/@hairmagicbyeranga"
-              data-unique-id="hairmagicbyeranga"
-              data-embed-type="creator"
-              style={{ maxWidth: 780, minWidth: 288 }}
-            >
-              <section>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@hairmagicbyeranga">
-                  @hairmagicbyeranga
-                </a>
-              </section>
-            </blockquote>
+            <div
+              ref={embedRef}
+              aria-label="TikTok creator embed for Hair Magic by Eranga"
+            />
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -780,7 +795,7 @@ function Location() {
           <div className="bg-blush border border-ink/10 overflow-hidden grid lg:grid-cols-5">
             <div className="lg:col-span-2 p-6 sm:p-10 lg:p-14 flex flex-col justify-between gap-8 sm:gap-10">
               <div>
-                <img src={logoAsset.url} alt="" className="h-12 sm:h-14 w-auto -ml-2" />
+                <img src={salonLogo} alt="" className="h-12 sm:h-14 w-auto -ml-2" />
                 <h3 className="font-display text-2xl sm:text-4xl text-ink mt-4 sm:mt-6">Hair Magic by Eranga</h3>
                 <p className="font-serif italic text-gold text-base sm:text-lg mt-1">
                   Where Hair Meets Perfection.
@@ -899,7 +914,7 @@ function Footer() {
     <footer className="bg-blush border-t border-ink/15">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 grid md:grid-cols-12 gap-8 sm:gap-10">
         <div className="md:col-span-5">
-          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto -ml-2" />
+          <img src={salonLogo} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto -ml-2" />
           <p className="font-serif italic text-lg sm:text-xl text-ink mt-4 max-w-sm">
             Where Hair Meets Perfection.
           </p>
@@ -965,7 +980,6 @@ function Home() {
     <main className="bg-blush text-ink overflow-x-hidden">
       <Nav />
       <Hero />
-      <Marquee />
       <Stats />
       <Services />
       <Gallery />
