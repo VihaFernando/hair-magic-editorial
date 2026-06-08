@@ -762,14 +762,14 @@ function TikTokSection() {
 
 function Location() {
   return (
-    <section id="contact" className="bg-cream py-28 lg:py-40">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="text-center mb-16">
+    <section id="contact" className="bg-cream py-20 sm:py-28 lg:py-40">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center mb-10 sm:mb-16">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— Visit the studio</p>
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— Visit the studio</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="editorial-headline text-ink text-5xl md:text-7xl lg:text-8xl">
+            <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               Come See
               <span className="italic font-serif text-gold"> Us.</span>
             </h2>
@@ -778,16 +778,16 @@ function Location() {
 
         <Reveal>
           <div className="bg-blush border border-ink/10 overflow-hidden grid lg:grid-cols-5">
-            <div className="lg:col-span-2 p-10 lg:p-14 flex flex-col justify-between gap-10">
+            <div className="lg:col-span-2 p-6 sm:p-10 lg:p-14 flex flex-col justify-between gap-8 sm:gap-10">
               <div>
-                <img src={logoAsset.url} alt="" className="h-14 w-auto -ml-2" />
-                <h3 className="font-display text-4xl text-ink mt-6">Hair Magic by Eranga</h3>
-                <p className="font-serif italic text-gold text-lg mt-1">
+                <img src={logoAsset.url} alt="" className="h-12 sm:h-14 w-auto -ml-2" />
+                <h3 className="font-display text-2xl sm:text-4xl text-ink mt-4 sm:mt-6">Hair Magic by Eranga</h3>
+                <p className="font-serif italic text-gold text-base sm:text-lg mt-1">
                   Where Hair Meets Perfection.
                 </p>
               </div>
 
-              <ul className="space-y-5 text-ink-soft">
+              <ul className="space-y-4 sm:space-y-5 text-ink-soft text-sm sm:text-base">
                 <li className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-gold mt-0.5 shrink-0" />
                   <span className="font-body">Colombo, Sri Lanka</span>
@@ -811,7 +811,7 @@ function Location() {
                   <Clock className="w-5 h-5 text-gold mt-0.5 shrink-0" />
                   <div>
                     <div>Mon – Sat · 9:00 – 19:00</div>
-                    <div className="text-sm opacity-70">Sunday by appointment</div>
+                    <div className="text-xs sm:text-sm opacity-70">Sunday by appointment</div>
                   </div>
                 </li>
               </ul>
@@ -820,18 +820,18 @@ function Location() {
                 href="https://www.google.com/maps/place/Hair+Magic+by+Eranga"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-ink text-blush px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500 self-start"
+                className="group inline-flex items-center gap-3 bg-ink text-blush px-6 sm:px-8 py-3 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500 self-start"
               >
                 Get Directions
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
 
-            <div className="lg:col-span-3 min-h-[400px] lg:min-h-0">
+            <div className="lg:col-span-3 min-h-[300px] sm:min-h-[400px] lg:min-h-0">
               <iframe
                 title="Hair Magic by Eranga location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0006160802036!2d79.86749697598697!3d6.890528118787383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b85704fe2b3%3A0x4e7ae64cb7df4e74!2sHair%20Magic%20by%20Eranga!5e0!3m2!1sen!2slk!4v1780925711413!5m2!1sen!2slk"
-                className="w-full h-full min-h-[400px] grayscale-[30%]"
+                className="w-full h-full min-h-[300px] sm:min-h-[400px] grayscale-[30%]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
