@@ -333,19 +333,19 @@ const STATS = [
 
 function Stats() {
   return (
-    <section className="bg-cream py-24 lg:py-32">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
+    <section className="bg-cream py-16 sm:py-24 lg:py-32">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
         <Reveal>
           <p className="editorial-eyebrow text-gold mb-4">— By the numbers</p>
         </Reveal>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mt-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16 mt-8 sm:mt-10">
           {STATS.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.1}>
-              <div className="border-t border-ink/20 pt-6">
-                <div className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-none">
+              <div className="border-t border-ink/20 pt-4 sm:pt-6">
+                <div className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-ink leading-none">
                   {s.n}
                 </div>
-                <div className="mt-4 text-sm tracking-[0.15em] uppercase text-ink-soft">
+                <div className="mt-3 sm:mt-4 text-[0.7rem] sm:text-sm tracking-[0.15em] uppercase text-ink-soft">
                   {s.l}
                 </div>
               </div>
