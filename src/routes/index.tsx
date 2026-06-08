@@ -190,94 +190,96 @@ function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
+  const services = [
+    "Balayage",
+    "Ombre",
+    "Blonde Transformations",
+    "Bridal Styling",
+    "Hair Treatments",
+    "Premium Coloring",
+  ];
 
   return (
     <section
       id="home"
       ref={ref}
-      className="relative bg-[#f5f0eb] min-h-[100svh] overflow-hidden flex flex-col"
+      className="relative overflow-hidden bg-[#f5f0eb]"
     >
-      <motion.div style={{ opacity }} className="flex-1 flex flex-col">
-        {/* Main split layout */}
-        <div className="flex-1 flex flex-col lg:flex-row items-stretch pt-20 lg:pt-20 min-h-0">
-          {/* Left — text */}
-          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-24 py-12 lg:py-0 lg:w-[52%] xl:w-[48%] z-10">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="editorial-eyebrow text-ink-soft mb-4 sm:mb-6 text-[0.6rem] sm:text-[0.7rem]"
-            >
-              ✦ Luxury Hair Studio · Sri Lanka
-            </motion.p>
+      <motion.div style={{ opacity }} className="relative flex min-h-[100svh] flex-col">
+        <motion.div style={{ y: bgY }} className="absolute inset-0">
+          <img
+            src={heroImg}
+            alt="Hair Experience Like No Other"
+            className="h-full w-full object-cover object-[68%_top] sm:object-[72%_top] lg:object-right-top"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(245,240,235,0.82)_0%,rgba(245,240,235,0.7)_18%,rgba(245,240,235,0.88)_55%,rgba(245,240,235,0.98)_100%)] lg:bg-[linear-gradient(90deg,rgba(245,240,235,0.96)_0%,rgba(245,240,235,0.9)_34%,rgba(245,240,235,0.62)_58%,rgba(245,240,235,0.16)_100%)]" />
+        </motion.div>
 
-            <h1 className="editorial-headline text-ink text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[5vw] xl:text-[5.5vw] leading-[0.9] max-w-[620px]">
-              <SplitReveal text="Hair Experience" />
-              <span className="block italic font-serif text-gold mt-1">
-                <SplitReveal text="Like No Other." delay={0.2} />
-              </span>
-            </h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
-              className="mt-5 sm:mt-8 font-serif text-base sm:text-lg text-ink-soft max-w-[38ch] leading-snug"
-            >
-              Luxury hair transformations <em className="text-gold">by Eranga</em> — crafted with
-              the care of a couture atelier.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4"
-            >
-              <a
-                href="#contact"
-                className="group inline-flex items-center gap-3 bg-ink text-blush px-6 py-3.5 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
+        <div className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-1 px-4 pt-24 sm:px-6 sm:pt-28 lg:px-10 lg:pt-24">
+          <div className="grid w-full content-center items-center gap-8 md:gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+            <div className="relative z-10 lg:col-span-6 xl:col-span-5">
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="editorial-eyebrow mb-5 text-center text-[0.6rem] text-ink-soft sm:mb-6 sm:text-left sm:text-[0.7rem]"
               >
-                Book Appointment
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#gallery"
-                className="group inline-flex items-center gap-3 border border-ink text-ink px-6 py-3.5 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-ink hover:text-blush transition-colors duration-500"
-              >
-                View Transformations
-              </a>
-            </motion.div>
-          </div>
+                ✦ Luxury Hair Studio · Sri Lanka
+              </motion.p>
 
-          {/* Right — image as visible element */}
-          <div className="relative lg:flex-1 flex items-end justify-center lg:justify-end overflow-hidden">
-            {/* Decorative oval backdrop */}
-            <div className="absolute bottom-0 right-0 lg:right-[-4%] w-[85%] lg:w-[82%] h-[90%] bg-[#ece6df] rounded-t-[50%] rounded-b-none" />
-            <motion.div
-              style={{ y: imgY }}
-              className="relative z-10 w-[60%] sm:w-[46%] lg:w-[68%] max-w-[440px] lg:max-w-none lg:h-full flex items-end"
-            >
-              <img
-                src={heroImg}
-                alt="Hair Experience Like No Other"
-                className="w-full h-auto lg:h-full lg:max-h-[75vh] object-cover object-top"
-              />
-            </motion.div>
+              <h1 className="editorial-headline mx-auto max-w-[11ch] text-center text-[2.85rem] leading-[0.88] text-ink sm:mx-0 sm:text-left sm:text-[4.25rem] md:max-w-[12ch] md:text-[4.8rem] lg:max-w-[10ch] lg:text-[5.1vw] xl:text-[5.4vw]">
+                <SplitReveal text="Hair Experience" />
+                <span className="mt-1 block italic font-serif text-gold">
+                  <SplitReveal text="Like No Other." delay={0.2} />
+                </span>
+              </h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+                className="mx-auto mt-6 max-w-[34ch] text-center font-serif text-[0.98rem] leading-relaxed text-ink-soft sm:mx-0 sm:mt-7 sm:text-left sm:text-lg md:max-w-[40ch]"
+              >
+                Luxury hair transformations <em className="text-gold">by Eranga</em> — crafted with
+                the care of a couture atelier.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.4 }}
+                className="mt-8 flex flex-col items-center gap-4 sm:mt-9 sm:items-start sm:flex-row sm:flex-wrap sm:gap-4"
+              >
+                <a
+                  href="#contact"
+                  className="group inline-flex min-w-[16rem] items-center justify-center gap-3 bg-ink px-6 py-3.5 text-[0.65rem] uppercase tracking-[0.25em] text-blush transition-colors duration-500 hover:bg-gold hover:text-ink sm:min-w-0 sm:justify-start sm:px-8 sm:py-4 sm:text-xs"
+                >
+                  Book Appointment
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <a
+                  href="#gallery"
+                  className="group inline-flex min-w-[16rem] items-center justify-center gap-3 border border-ink px-6 py-3.5 text-[0.65rem] uppercase tracking-[0.25em] text-ink transition-colors duration-500 hover:bg-ink hover:text-blush sm:min-w-0 sm:justify-start sm:px-8 sm:py-4 sm:text-xs"
+                >
+                  View Transformations
+                </a>
+              </motion.div>
+            </div>
+
+            <div className="hidden lg:col-span-6 xl:col-span-7 lg:block" />
           </div>
         </div>
 
-        {/* Marquee — visible in first viewport */}
-        <div className="border-t border-ink/15 bg-[#f5f0eb] py-3 sm:py-4 overflow-hidden shrink-0">
+        <div className="relative z-10 mt-auto overflow-hidden border-t border-ink/15 bg-[#f5f0eb]/85 py-3 backdrop-blur-sm sm:py-4">
           <div className="flex marquee-track whitespace-nowrap">
             {[...Array(3)].flatMap((_, r) =>
-              ["Balayage", "Ombre", "Blonde Transformations", "Bridal Styling", "Hair Treatments", "Premium Coloring"].map((t, i) => (
+              services.map((service, i) => (
                 <span
                   key={`${r}-${i}`}
-                  className="font-display italic text-base sm:text-xl md:text-2xl text-ink mx-5 sm:mx-8 inline-flex items-center gap-4 sm:gap-6"
+                  className="mx-5 inline-flex items-center gap-4 font-display text-sm italic text-ink sm:mx-8 sm:text-lg md:text-xl"
                 >
-                  {t}
+                  {service}
                   <span className="text-gold not-italic">✦</span>
                 </span>
               ))
