@@ -605,16 +605,65 @@ function Gallery() {
         </div>
 
         <Reveal>
-          <div className="mt-16 flex justify-center">
-            <a
-              href="https://www.instagram.com/hairmagic_by_eranga/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border border-blush/40 text-blush px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500"
-            >
-              See more on Instagram
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+          <div className="mt-16 sm:mt-24 flex flex-col items-center gap-8">
+            <div className="flex items-center gap-4 w-full max-w-xs">
+              <div className="h-px flex-1 bg-blush/20" />
+              <p className="editorial-eyebrow text-blush/50 whitespace-nowrap">See more of our work</p>
+              <div className="h-px flex-1 bg-blush/20" />
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <a
+                href="https://www.instagram.com/hairmagic_by_eranga/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 border border-blush/30 text-blush px-6 py-4 text-[0.65rem] tracking-[0.2em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500 min-w-[220px] justify-between"
+              >
+                <div className="flex items-center gap-3">
+                  <Instagram className="w-4 h-4 shrink-0" />
+                  <div className="text-left">
+                    <div className="text-[0.6rem] tracking-[0.2em] uppercase opacity-60 leading-none mb-0.5">Instagram</div>
+                    <div>@hairmagic_by_eranga</div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@hairmagicbyeranga"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 border border-blush/30 text-blush px-6 py-4 text-[0.65rem] tracking-[0.2em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500 min-w-[220px] justify-between"
+              >
+                <div className="flex items-center gap-3">
+                  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-[0.6rem] tracking-[0.2em] uppercase opacity-60 leading-none mb-0.5">TikTok</div>
+                    <div>@hairmagicbyeranga</div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+
+              <a
+                href="https://www.facebook.com/p/Hair-Magic-By-Eranga-100094330872177/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 border border-blush/30 text-blush px-6 py-4 text-[0.65rem] tracking-[0.2em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500 min-w-[220px] justify-between"
+              >
+                <div className="flex items-center gap-3">
+                  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-[0.6rem] tracking-[0.2em] uppercase opacity-60 leading-none mb-0.5">Facebook</div>
+                    <div>Hair Magic By Eranga</div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>
@@ -743,42 +792,6 @@ function Testimonials() {
 /* ─────────────────────────────────────────── */
 
 function TikTokSection() {
-  const embedRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = embedRef.current;
-    if (!container) return;
-
-    container.innerHTML = `
-      <blockquote
-        class="tiktok-embed"
-        cite="https://www.tiktok.com/@hairmagicbyeranga"
-        data-unique-id="hairmagicbyeranga"
-        data-embed-type="creator"
-        style="max-width: 100%; min-width: 325px; width: 100%;"
-      >
-        <section>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.tiktok.com/@hairmagicbyeranga"
-          >
-            @hairmagicbyeranga
-          </a>
-        </section>
-      </blockquote>
-    `;
-
-    const s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.tiktok.com/embed.js";
-    container.appendChild(s);
-
-    return () => {
-      container.innerHTML = "";
-    };
-  }, []);
-
   return (
     <section className="bg-blush py-20 sm:py-28 lg:py-36">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 items-start">
@@ -805,11 +818,25 @@ function TikTokSection() {
 
         <div className="w-full lg:col-span-7">
           <div className="glass-card h-fit w-full p-5 sm:p-6 md:p-8 lg:p-10">
-            <div
-              ref={embedRef}
-              className="h-fit w-full [&_.tiktok-embed]:!mx-0 [&_.tiktok-embed]:!mb-0 [&_.tiktok-embed]:!max-w-full [&_.tiktok-embed]:!w-full [&_iframe]:!block [&_iframe]:!max-w-full [&_iframe]:!w-full"
-              aria-label="TikTok creator embed for Hair Magic by Eranga"
-            />
+            {/* @ts-expect-error — blockquote with TikTok-specific data attributes */}
+            <blockquote
+              className="tiktok-embed"
+              cite="https://www.tiktok.com/@hairmagicbyeranga"
+              data-unique-id="hairmagicbyeranga"
+              data-embed-type="creator"
+              data-embed-from="oembed"
+              style={{ maxWidth: "100%", minWidth: 325 }}
+            >
+              <section>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.tiktok.com/@hairmagicbyeranga?refer=creator_embed"
+                >
+                  @hairmagicbyeranga
+                </a>
+              </section>
+            </blockquote>
           </div>
         </div>
       </div>
@@ -957,60 +984,119 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="bg-blush border-t border-ink/15">
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 grid md:grid-cols-12 gap-8 sm:gap-10">
-        <div className="md:col-span-5">
-          <img src={salonLogo} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto -ml-2" />
-          <p className="font-serif italic text-lg sm:text-xl text-ink mt-4 max-w-sm">
-            Where Hair Meets Perfection.
-          </p>
+    <footer className="bg-ink text-blush overflow-hidden">
+      {/* Top accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+
+      {/* Main body */}
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16">
+        {/* Brand + tagline — full width top row */}
+        <div className="border-b border-blush/10 pb-12 sm:pb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div>
+            <img src={salonLogo} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto brightness-0 invert" />
+            <p className="font-serif italic text-2xl sm:text-3xl text-blush/80 mt-5 max-w-sm leading-snug">
+              Where Hair Meets<br />
+              <span className="text-gold">Perfection.</span>
+            </p>
+          </div>
+          <a
+            href="#contact"
+            className="group self-start lg:self-end inline-flex items-center gap-3 border border-blush/20 text-blush px-7 py-4 text-[0.65rem] tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-colors duration-500"
+          >
+            Book Appointment
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
         </div>
 
-        <div className="md:col-span-3">
-          <p className="editorial-eyebrow text-ink-soft mb-5">Menu</p>
-          <ul className="space-y-3">
-            {NAV.map((n) => (
-              <li key={n.href}>
-                <a href={n.href} className="link-underline text-ink">{n.label}</a>
+        {/* Three columns */}
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 sm:gap-12 pt-12 sm:pt-16">
+
+          {/* Navigate */}
+          <div className="col-span-2 sm:col-span-1 md:col-span-3">
+            <p className="editorial-eyebrow text-gold mb-6">Navigate</p>
+            <ul className="space-y-3">
+              {NAV.map((n) => (
+                <li key={n.href}>
+                  <a
+                    href={n.href}
+                    className="text-sm text-blush/60 hover:text-blush transition-colors duration-300 tracking-wide"
+                  >
+                    {n.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Follow */}
+          <div className="col-span-2 sm:col-span-1 md:col-span-3">
+            <p className="editorial-eyebrow text-gold mb-6">Follow</p>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="https://www.instagram.com/hairmagic_by_eranga/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2.5 text-sm text-blush/60 hover:text-blush transition-colors duration-300"
+                >
+                  <Instagram className="w-4 h-4 shrink-0" />
+                  @hairmagic_by_eranga
+                </a>
               </li>
-            ))}
-          </ul>
-        </div>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@hairmagicbyeranga"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 text-sm text-blush/60 hover:text-blush transition-colors duration-300"
+                >
+                  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+                  </svg>
+                  @hairmagicbyeranga
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/p/Hair-Magic-By-Eranga-100094330872177/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 text-sm text-blush/60 hover:text-blush transition-colors duration-300"
+                >
+                  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Hair Magic By Eranga
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <div className="md:col-span-4">
-          <p className="editorial-eyebrow text-ink-soft mb-5">Follow</p>
-          <ul className="space-y-3">
-            <li>
-              <a
-                href="https://www.instagram.com/hairmagic_by_eranga/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 link-underline text-ink"
-              >
-                <Instagram className="w-4 h-4" /> Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.tiktok.com/@hairmagicbyeranga"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline text-ink"
-              >
-                TikTok
-              </a>
-            </li>
-            <li className="inline-flex items-center gap-3 text-ink">
-              <MapPin className="w-4 h-4" /> Colombo, Sri Lanka
-            </li>
-          </ul>
+          {/* Contact */}
+          <div className="col-span-2 md:col-span-6">
+            <p className="editorial-eyebrow text-gold mb-6">Visit Us</p>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-sm text-blush/60">
+                <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" />
+                Colombo, Sri Lanka
+              </li>
+              <li className="flex items-start gap-3 text-sm text-blush/60">
+                <Phone className="w-4 h-4 text-gold mt-0.5 shrink-0" />
+                <a href="tel:+94713740231" className="hover:text-blush transition-colors duration-300">+94 71 374 0231</a>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-blush/60">
+                <Clock className="w-4 h-4 text-gold mt-0.5 shrink-0" />
+                <span>Mon – Sat · 9:00 – 19:00<br /><span className="text-blush/40 text-xs">Sunday by appointment</span></span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div className="border-t border-ink/10">
-        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[0.6rem] sm:text-xs tracking-[0.2em] uppercase text-ink-soft text-center">
+      {/* Bottom bar */}
+      <div className="border-t border-blush/10">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[0.6rem] tracking-[0.2em] uppercase text-blush/30 text-center">
           <div>© {new Date().getFullYear()} Hair Magic by Eranga · All rights reserved</div>
-          <div>Crafted with care in Sri Lanka</div>
         </div>
       </div>
     </footer>
