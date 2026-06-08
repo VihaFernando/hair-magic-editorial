@@ -117,9 +117,9 @@ function Nav() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 flex items-center justify-between">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-10 md:h-12 w-auto" />
+          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-8 sm:h-10 md:h-12 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-10">
@@ -195,7 +195,7 @@ function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section id="home" ref={ref} className="relative h-screen min-h-[720px] overflow-hidden">
+    <section id="home" ref={ref} className="relative h-[100svh] min-h-[560px] md:min-h-[720px] overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src={heroImg}
@@ -207,18 +207,18 @@ function Hero() {
       </motion.div>
 
       <motion.div style={{ opacity }} className="relative z-10 h-full flex flex-col">
-        <div className="flex-1 flex items-center">
-          <div className="max-w-[1500px] mx-auto px-6 lg:px-10 w-full">
+        <div className="flex-1 flex items-center pt-20 md:pt-0">
+          <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 w-full">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="editorial-eyebrow text-ink-soft mb-6"
+              className="editorial-eyebrow text-ink-soft mb-4 sm:mb-6 text-[0.6rem] sm:text-[0.7rem]"
             >
               ✦ Luxury Hair Studio · Sri Lanka
             </motion.p>
 
-            <h1 className="editorial-headline text-ink text-[14vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.88] max-w-[1300px]">
+            <h1 className="editorial-headline text-ink text-[3.25rem] sm:text-[5rem] md:text-[10vw] lg:text-[8.5vw] leading-[0.88] max-w-[1300px]">
               <SplitReveal text="Where Hair" />
               <span className="block italic font-serif text-gold mt-1">
                 <SplitReveal text="Meets Perfection." delay={0.25} />
@@ -229,24 +229,24 @@ function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
-              className="mt-10 flex flex-col sm:flex-row sm:items-end justify-between gap-8 max-w-[1100px]"
+              className="mt-6 sm:mt-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 max-w-[1100px]"
             >
-              <p className="font-serif text-xl md:text-2xl text-ink-soft max-w-md leading-snug">
+              <p className="font-serif text-base sm:text-xl md:text-2xl text-ink-soft max-w-md leading-snug">
                 Luxury hair transformations <em className="text-gold">by Eranga</em> — crafted with
                 the care of a couture atelier.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <a
                   href="#contact"
-                  className="group inline-flex items-center gap-3 bg-ink text-blush px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
+                  className="group inline-flex items-center gap-3 bg-ink text-blush px-5 py-3 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
                 >
                   Book Appointment
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#gallery"
-                  className="group inline-flex items-center gap-3 border border-ink text-ink px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-ink hover:text-blush transition-colors duration-500"
+                  className="group inline-flex items-center gap-3 border border-ink text-ink px-5 py-3 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-ink hover:text-blush transition-colors duration-500"
                 >
                   View Transformations
                 </a>
@@ -304,12 +304,12 @@ function Marquee() {
   ];
   const row = [...items, ...items, ...items];
   return (
-    <div className="border-y border-ink/15 bg-blush py-6 overflow-hidden">
+    <div className="border-y border-ink/15 bg-blush py-4 sm:py-6 overflow-hidden">
       <div className="flex marquee-track whitespace-nowrap">
         {row.map((t, i) => (
           <span
             key={i}
-            className="font-display italic text-3xl md:text-5xl text-ink mx-10 inline-flex items-center gap-10"
+            className="font-display italic text-xl sm:text-3xl md:text-5xl text-ink mx-5 sm:mx-10 inline-flex items-center gap-5 sm:gap-10"
           >
             {t}
             <span className="text-gold not-italic">✦</span>
@@ -333,19 +333,19 @@ const STATS = [
 
 function Stats() {
   return (
-    <section className="bg-cream py-24 lg:py-32">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
+    <section className="bg-cream py-16 sm:py-24 lg:py-32">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
         <Reveal>
           <p className="editorial-eyebrow text-gold mb-4">— By the numbers</p>
         </Reveal>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mt-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16 mt-8 sm:mt-10">
           {STATS.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.1}>
-              <div className="border-t border-ink/20 pt-6">
-                <div className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-none">
+              <div className="border-t border-ink/20 pt-4 sm:pt-6">
+                <div className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-ink leading-none">
                   {s.n}
                 </div>
-                <div className="mt-4 text-sm tracking-[0.15em] uppercase text-ink-soft">
+                <div className="mt-3 sm:mt-4 text-[0.7rem] sm:text-sm tracking-[0.15em] uppercase text-ink-soft">
                   {s.l}
                 </div>
               </div>
@@ -372,25 +372,25 @@ const SERVICES = [
 
 function Services() {
   return (
-    <section id="services" className="bg-blush py-28 lg:py-40">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
+    <section id="services" className="bg-blush py-20 sm:py-28 lg:py-40">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-10 mb-12 sm:mb-20">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— What we do</p>
-            <h2 className="editorial-headline text-ink text-6xl md:text-8xl lg:text-9xl">
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— What we do</p>
+            <h2 className="editorial-headline text-ink text-4xl sm:text-6xl md:text-8xl lg:text-9xl">
               Signature
               <span className="block italic font-serif text-gold">Services.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="font-serif text-xl text-ink-soft max-w-md leading-relaxed">
+            <p className="font-serif text-base sm:text-xl text-ink-soft max-w-md leading-relaxed">
               Six house specialties — every appointment begins with a private
               consultation and ends with a transformation worth sharing.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-10 sm:gap-y-16">
           {SERVICES.map((s, i) => (
             <Reveal key={s.no} delay={(i % 3) * 0.1}>
               <article className="group cursor-pointer">
@@ -409,12 +409,12 @@ function Services() {
                     <ArrowUpRight className="w-4 h-4 text-ink" />
                   </div>
                 </div>
-                <div className="mt-6 flex items-start justify-between gap-6">
-                  <h3 className="font-display text-2xl md:text-3xl text-ink leading-tight">
+                <div className="mt-4 sm:mt-6 flex items-start justify-between gap-6">
+                  <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-ink leading-tight">
                     {s.name}
                   </h3>
                 </div>
-                <p className="mt-3 text-sm text-ink-soft leading-relaxed max-w-sm">{s.blurb}</p>
+                <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-ink-soft leading-relaxed max-w-sm">{s.blurb}</p>
               </article>
             </Reveal>
           ))}
@@ -439,18 +439,18 @@ const GALLERY = [
 
 function Gallery() {
   return (
-    <section id="gallery" className="bg-ink text-blush py-28 lg:py-40">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
+    <section id="gallery" className="bg-ink text-blush py-20 sm:py-28 lg:py-40">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-10 mb-12 sm:mb-20">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— Real Results</p>
-            <h2 className="editorial-headline text-blush text-6xl md:text-8xl lg:text-[9rem]">
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— Real Results</p>
+            <h2 className="editorial-headline text-blush text-4xl sm:text-6xl md:text-8xl lg:text-[9rem]">
               Real
               <span className="block italic font-serif text-gold">Results.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="font-serif text-xl text-blush/70 max-w-md leading-relaxed">
+            <p className="font-serif text-base sm:text-xl text-blush/70 max-w-md leading-relaxed">
               No filters. No retouching. Just real transformations from inside
               the studio.
             </p>
@@ -458,9 +458,9 @@ function Gallery() {
         </div>
 
         {/* Masonry via CSS columns */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 [column-fill:_balance]">
           {GALLERY.map((g, i) => (
-            <Reveal key={i} delay={(i % 3) * 0.08} className="mb-6 break-inside-avoid">
+            <Reveal key={i} delay={(i % 3) * 0.08} className="mb-4 sm:mb-6 break-inside-avoid">
               <figure className="group relative hover-zoom">
                 <img src={g.src} alt={g.label} loading="lazy" className="w-full h-auto" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -506,8 +506,8 @@ function About() {
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    <section id="about" ref={ref} className="bg-cream py-28 lg:py-40 overflow-hidden">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+    <section id="about" ref={ref} className="bg-cream py-20 sm:py-28 lg:py-40 overflow-hidden">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-20 items-center">
         <Reveal className="lg:col-span-5">
           <div className="relative aspect-[4/5] bg-blush overflow-hidden">
             <motion.img
@@ -517,9 +517,9 @@ function About() {
               loading="lazy"
               className="w-full h-[115%] object-cover"
             />
-            <div className="absolute -bottom-4 -right-4 bg-blush px-6 py-4 border border-ink/10">
-              <div className="font-display italic text-2xl text-ink">Eranga</div>
-              <div className="text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft mt-1">
+            <div className="absolute bottom-3 right-3 sm:-bottom-4 sm:-right-4 bg-blush px-4 py-3 sm:px-6 sm:py-4 border border-ink/10">
+              <div className="font-display italic text-xl sm:text-2xl text-ink">Eranga</div>
+              <div className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft mt-1">
                 Founder · Hair Artist
               </div>
             </div>
@@ -528,16 +528,16 @@ function About() {
 
         <div className="lg:col-span-7">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— The artist</p>
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— The artist</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="editorial-headline text-ink text-5xl md:text-7xl lg:text-[5.5rem]">
+            <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]">
               The Art Behind
               <span className="block italic font-serif text-gold">Every Transformation.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="mt-10 space-y-6 font-serif text-xl text-ink-soft leading-relaxed max-w-[55ch]">
+            <div className="mt-6 sm:mt-10 space-y-4 sm:space-y-6 font-serif text-base sm:text-xl text-ink-soft leading-relaxed max-w-[55ch]">
               <p>
                 Eranga is a hair artist obsessed with the small things — the
                 slope of a balayage, the warmth in a tone, the way a curl falls
@@ -551,16 +551,16 @@ function About() {
             </div>
           </Reveal>
           <Reveal delay={0.3}>
-            <div className="mt-12 grid grid-cols-2 gap-8 max-w-md">
+            <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-6 sm:gap-8 max-w-md">
               <div>
-                <div className="font-display text-4xl text-ink">10+</div>
-                <div className="text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
+                <div className="font-display text-3xl sm:text-4xl text-ink">10+</div>
+                <div className="text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
                   Years Experience
                 </div>
               </div>
               <div>
-                <div className="font-display text-4xl text-ink">5★</div>
-                <div className="text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
+                <div className="font-display text-3xl sm:text-4xl text-ink">5★</div>
+                <div className="text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-ink-soft mt-2">
                   Google Rated
                 </div>
               </div>
@@ -599,39 +599,39 @@ const REVIEWS = [
 
 function Testimonials() {
   return (
-    <section className="relative bg-blush py-28 lg:py-40 overflow-hidden">
+    <section className="relative bg-blush py-20 sm:py-28 lg:py-40 overflow-hidden">
       {/* decorative gradient */}
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gold/20 blur-[120px]" />
       <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-gold/15 blur-[120px]" />
 
-      <div className="relative max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="text-center mb-20">
+      <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center mb-12 sm:mb-20">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— Social proof</p>
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— Social proof</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="editorial-headline text-ink text-5xl md:text-7xl lg:text-8xl">
+            <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               Loved By Our
               <span className="italic font-serif text-gold"> Community.</span>
             </h2>
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
           {REVIEWS.map((r, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <article className="glass-card p-10 h-full flex flex-col">
-                <div className="flex gap-1 text-gold mb-6">
+              <article className="glass-card p-6 sm:p-10 h-full flex flex-col">
+                <div className="flex gap-1 text-gold mb-4 sm:mb-6">
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <blockquote className="font-serif text-2xl text-ink leading-snug flex-1">
+                <blockquote className="font-serif text-lg sm:text-2xl text-ink leading-snug flex-1">
                   “{r.quote}”
                 </blockquote>
-                <footer className="mt-8 pt-6 border-t border-ink/10 flex items-center justify-between">
-                  <div className="font-display text-lg text-ink">{r.name}</div>
-                  <div className="text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft">
+                <footer className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-ink/10 flex items-center justify-between">
+                  <div className="font-display text-base sm:text-lg text-ink">{r.name}</div>
+                  <div className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft">
                     {r.src}
                   </div>
                 </footer>
@@ -651,11 +651,11 @@ function Testimonials() {
 function InstagramRow() {
   const IMGS = [g1, g3, g6, g2, g5, g4, g1, g6];
   return (
-    <section className="bg-cream py-24 lg:py-32 overflow-hidden">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-12">
+    <section className="bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 mb-8 sm:mb-12">
         <Reveal>
-          <p className="editorial-eyebrow text-gold mb-6">— @hairmagic_by_eranga</p>
-          <h2 className="editorial-headline text-ink text-5xl md:text-7xl">
+          <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— @hairmagic_by_eranga</p>
+          <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl">
             Latest from
             <span className="italic font-serif text-gold"> Instagram.</span>
           </h2>
@@ -665,7 +665,7 @@ function InstagramRow() {
             href="https://www.instagram.com/hairmagic_by_eranga/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-ink link-underline text-sm tracking-[0.25em] uppercase"
+            className="group inline-flex items-center gap-2 text-ink link-underline text-xs sm:text-sm tracking-[0.25em] uppercase"
           >
             <Instagram className="w-4 h-4" />
             Follow on Instagram
@@ -673,15 +673,15 @@ function InstagramRow() {
         </Reveal>
       </div>
 
-      <div className="overflow-x-auto scrollbar-none px-6 lg:px-10">
-        <div className="flex gap-5 pb-4 min-w-max">
+      <div className="overflow-x-auto scrollbar-none px-4 sm:px-6 lg:px-10">
+        <div className="flex gap-4 sm:gap-5 pb-4 min-w-max">
           {IMGS.map((src, i) => (
             <a
               key={i}
               href="https://www.instagram.com/hairmagic_by_eranga/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-[280px] md:w-[340px] aspect-[4/5] flex-shrink-0 hover-zoom"
+              className="group relative w-[220px] sm:w-[280px] md:w-[340px] aspect-[4/5] flex-shrink-0 hover-zoom"
             >
               <img src={src} alt="" loading="lazy" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/30 transition-colors duration-500 flex items-center justify-center">
@@ -711,15 +711,15 @@ function TikTokSection() {
   }, []);
 
   return (
-    <section className="bg-blush py-28 lg:py-36">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
+    <section className="bg-blush py-20 sm:py-28 lg:py-36">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 items-center">
         <Reveal className="lg:col-span-6">
-          <p className="editorial-eyebrow text-gold mb-6">— On TikTok</p>
-          <h2 className="editorial-headline text-ink text-5xl md:text-7xl">
+          <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— On TikTok</p>
+          <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl">
             Watch The
             <span className="block italic font-serif text-gold">Magic Happen.</span>
           </h2>
-          <p className="mt-8 font-serif text-xl text-ink-soft leading-relaxed max-w-md">
+          <p className="mt-6 sm:mt-8 font-serif text-base sm:text-xl text-ink-soft leading-relaxed max-w-md">
             Behind-the-scenes reels from inside the studio — color formulas,
             blow-outs, and full transformation reveals.
           </p>
@@ -727,7 +727,7 @@ function TikTokSection() {
             href="https://www.tiktok.com/@hairmagicbyeranga"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 group inline-flex items-center gap-3 bg-ink text-blush px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
+            className="mt-8 sm:mt-10 group inline-flex items-center gap-3 bg-ink text-blush px-6 sm:px-8 py-3 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
           >
             Open TikTok
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -762,14 +762,14 @@ function TikTokSection() {
 
 function Location() {
   return (
-    <section id="contact" className="bg-cream py-28 lg:py-40">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="text-center mb-16">
+    <section id="contact" className="bg-cream py-20 sm:py-28 lg:py-40">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center mb-10 sm:mb-16">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— Visit the studio</p>
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— Visit the studio</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="editorial-headline text-ink text-5xl md:text-7xl lg:text-8xl">
+            <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               Come See
               <span className="italic font-serif text-gold"> Us.</span>
             </h2>
@@ -778,16 +778,16 @@ function Location() {
 
         <Reveal>
           <div className="bg-blush border border-ink/10 overflow-hidden grid lg:grid-cols-5">
-            <div className="lg:col-span-2 p-10 lg:p-14 flex flex-col justify-between gap-10">
+            <div className="lg:col-span-2 p-6 sm:p-10 lg:p-14 flex flex-col justify-between gap-8 sm:gap-10">
               <div>
-                <img src={logoAsset.url} alt="" className="h-14 w-auto -ml-2" />
-                <h3 className="font-display text-4xl text-ink mt-6">Hair Magic by Eranga</h3>
-                <p className="font-serif italic text-gold text-lg mt-1">
+                <img src={logoAsset.url} alt="" className="h-12 sm:h-14 w-auto -ml-2" />
+                <h3 className="font-display text-2xl sm:text-4xl text-ink mt-4 sm:mt-6">Hair Magic by Eranga</h3>
+                <p className="font-serif italic text-gold text-base sm:text-lg mt-1">
                   Where Hair Meets Perfection.
                 </p>
               </div>
 
-              <ul className="space-y-5 text-ink-soft">
+              <ul className="space-y-4 sm:space-y-5 text-ink-soft text-sm sm:text-base">
                 <li className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-gold mt-0.5 shrink-0" />
                   <span className="font-body">Colombo, Sri Lanka</span>
@@ -811,7 +811,7 @@ function Location() {
                   <Clock className="w-5 h-5 text-gold mt-0.5 shrink-0" />
                   <div>
                     <div>Mon – Sat · 9:00 – 19:00</div>
-                    <div className="text-sm opacity-70">Sunday by appointment</div>
+                    <div className="text-xs sm:text-sm opacity-70">Sunday by appointment</div>
                   </div>
                 </li>
               </ul>
@@ -820,18 +820,18 @@ function Location() {
                 href="https://www.google.com/maps/place/Hair+Magic+by+Eranga"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-ink text-blush px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500 self-start"
+                className="group inline-flex items-center gap-3 bg-ink text-blush px-6 sm:px-8 py-3 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500 self-start"
               >
                 Get Directions
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
 
-            <div className="lg:col-span-3 min-h-[400px] lg:min-h-0">
+            <div className="lg:col-span-3 min-h-[300px] sm:min-h-[400px] lg:min-h-0">
               <iframe
                 title="Hair Magic by Eranga location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0006160802036!2d79.86749697598697!3d6.890528118787383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b85704fe2b3%3A0x4e7ae64cb7df4e74!2sHair%20Magic%20by%20Eranga!5e0!3m2!1sen!2slk!4v1780925711413!5m2!1sen!2slk"
-                className="w-full h-full min-h-[400px] grayscale-[30%]"
+                className="w-full h-full min-h-[300px] sm:min-h-[400px] grayscale-[30%]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
@@ -851,35 +851,35 @@ function Location() {
 
 function FinalCTA() {
   return (
-    <section className="relative bg-ink text-blush py-32 lg:py-48 overflow-hidden">
+    <section className="relative bg-ink text-blush py-24 sm:py-32 lg:py-48 overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img src={g1} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-ink/70" />
       </div>
-      <div className="relative max-w-[1500px] mx-auto px-6 lg:px-10 text-center">
+      <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 text-center">
         <Reveal>
-          <p className="editorial-eyebrow text-gold mb-8">— Your turn</p>
+          <p className="editorial-eyebrow text-gold mb-6 sm:mb-8">— Your turn</p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="editorial-headline text-blush text-6xl md:text-8xl lg:text-[10rem]">
+          <h2 className="editorial-headline text-blush text-4xl sm:text-6xl md:text-8xl lg:text-[10rem]">
             Ready For Your Next
             <span className="block italic font-serif text-gold">Transformation?</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <div className="mt-14 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 sm:mt-14 flex flex-wrap justify-center gap-3 sm:gap-4">
             <a
               href="https://wa.me/94000000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-blush text-ink px-10 py-5 text-xs tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-500"
+              className="group inline-flex items-center gap-3 bg-blush text-ink px-6 sm:px-10 py-4 sm:py-5 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-500"
             >
               Book Appointment
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
-              className="group inline-flex items-center gap-3 border border-blush/40 text-blush px-10 py-5 text-xs tracking-[0.25em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500"
+              className="group inline-flex items-center gap-3 border border-blush/40 text-blush px-6 sm:px-10 py-4 sm:py-5 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500"
             >
               Contact Us
             </a>
@@ -897,10 +897,10 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="bg-blush border-t border-ink/15">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-12 gap-10">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 grid md:grid-cols-12 gap-8 sm:gap-10">
         <div className="md:col-span-5">
-          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-16 w-auto -ml-2" />
-          <p className="font-serif italic text-xl text-ink mt-4 max-w-sm">
+          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto -ml-2" />
+          <p className="font-serif italic text-lg sm:text-xl text-ink mt-4 max-w-sm">
             Where Hair Meets Perfection.
           </p>
         </div>
@@ -947,7 +947,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-ink/10">
-        <div className="max-w-[1500px] mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs tracking-[0.2em] uppercase text-ink-soft">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[0.6rem] sm:text-xs tracking-[0.2em] uppercase text-ink-soft text-center">
           <div>© {new Date().getFullYear()} Hair Magic by Eranga · All rights reserved</div>
           <div>Crafted with care in Sri Lanka</div>
         </div>
