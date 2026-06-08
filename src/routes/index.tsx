@@ -897,10 +897,10 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="bg-blush border-t border-ink/15">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-12 gap-10">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 grid md:grid-cols-12 gap-8 sm:gap-10">
         <div className="md:col-span-5">
-          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-16 w-auto -ml-2" />
-          <p className="font-serif italic text-xl text-ink mt-4 max-w-sm">
+          <img src={logoAsset.url} alt="Hair Magic by Eranga" className="h-12 sm:h-16 w-auto -ml-2" />
+          <p className="font-serif italic text-lg sm:text-xl text-ink mt-4 max-w-sm">
             Where Hair Meets Perfection.
           </p>
         </div>
