@@ -711,15 +711,15 @@ function TikTokSection() {
   }, []);
 
   return (
-    <section className="bg-blush py-28 lg:py-36">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
+    <section className="bg-blush py-20 sm:py-28 lg:py-36">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10 sm:gap-12 items-center">
         <Reveal className="lg:col-span-6">
-          <p className="editorial-eyebrow text-gold mb-6">— On TikTok</p>
-          <h2 className="editorial-headline text-ink text-5xl md:text-7xl">
+          <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— On TikTok</p>
+          <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl">
             Watch The
             <span className="block italic font-serif text-gold">Magic Happen.</span>
           </h2>
-          <p className="mt-8 font-serif text-xl text-ink-soft leading-relaxed max-w-md">
+          <p className="mt-6 sm:mt-8 font-serif text-base sm:text-xl text-ink-soft leading-relaxed max-w-md">
             Behind-the-scenes reels from inside the studio — color formulas,
             blow-outs, and full transformation reveals.
           </p>
@@ -727,7 +727,7 @@ function TikTokSection() {
             href="https://www.tiktok.com/@hairmagicbyeranga"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 group inline-flex items-center gap-3 bg-ink text-blush px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
+            className="mt-8 sm:mt-10 group inline-flex items-center gap-3 bg-ink text-blush px-6 sm:px-8 py-3 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
           >
             Open TikTok
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
