@@ -651,11 +651,11 @@ function Testimonials() {
 function InstagramRow() {
   const IMGS = [g1, g3, g6, g2, g5, g4, g1, g6];
   return (
-    <section className="bg-cream py-24 lg:py-32 overflow-hidden">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10 flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-12">
+    <section className="bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 mb-8 sm:mb-12">
         <Reveal>
-          <p className="editorial-eyebrow text-gold mb-6">— @hairmagic_by_eranga</p>
-          <h2 className="editorial-headline text-ink text-5xl md:text-7xl">
+          <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— @hairmagic_by_eranga</p>
+          <h2 className="editorial-headline text-ink text-4xl sm:text-5xl md:text-7xl">
             Latest from
             <span className="italic font-serif text-gold"> Instagram.</span>
           </h2>
@@ -665,7 +665,7 @@ function InstagramRow() {
             href="https://www.instagram.com/hairmagic_by_eranga/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-ink link-underline text-sm tracking-[0.25em] uppercase"
+            className="group inline-flex items-center gap-2 text-ink link-underline text-xs sm:text-sm tracking-[0.25em] uppercase"
           >
             <Instagram className="w-4 h-4" />
             Follow on Instagram
@@ -673,15 +673,15 @@ function InstagramRow() {
         </Reveal>
       </div>
 
-      <div className="overflow-x-auto scrollbar-none px-6 lg:px-10">
-        <div className="flex gap-5 pb-4 min-w-max">
+      <div className="overflow-x-auto scrollbar-none px-4 sm:px-6 lg:px-10">
+        <div className="flex gap-4 sm:gap-5 pb-4 min-w-max">
           {IMGS.map((src, i) => (
             <a
               key={i}
               href="https://www.instagram.com/hairmagic_by_eranga/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-[280px] md:w-[340px] aspect-[4/5] flex-shrink-0 hover-zoom"
+              className="group relative w-[220px] sm:w-[280px] md:w-[340px] aspect-[4/5] flex-shrink-0 hover-zoom"
             >
               <img src={src} alt="" loading="lazy" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/30 transition-colors duration-500 flex items-center justify-center">
