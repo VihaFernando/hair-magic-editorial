@@ -372,25 +372,25 @@ const SERVICES = [
 
 function Services() {
   return (
-    <section id="services" className="bg-blush py-28 lg:py-40">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
+    <section id="services" className="bg-blush py-20 sm:py-28 lg:py-40">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-10 mb-12 sm:mb-20">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— What we do</p>
-            <h2 className="editorial-headline text-ink text-6xl md:text-8xl lg:text-9xl">
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— What we do</p>
+            <h2 className="editorial-headline text-ink text-4xl sm:text-6xl md:text-8xl lg:text-9xl">
               Signature
               <span className="block italic font-serif text-gold">Services.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="font-serif text-xl text-ink-soft max-w-md leading-relaxed">
+            <p className="font-serif text-base sm:text-xl text-ink-soft max-w-md leading-relaxed">
               Six house specialties — every appointment begins with a private
               consultation and ends with a transformation worth sharing.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-10 sm:gap-y-16">
           {SERVICES.map((s, i) => (
             <Reveal key={s.no} delay={(i % 3) * 0.1}>
               <article className="group cursor-pointer">
