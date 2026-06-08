@@ -304,12 +304,12 @@ function Marquee() {
   ];
   const row = [...items, ...items, ...items];
   return (
-    <div className="border-y border-ink/15 bg-blush py-6 overflow-hidden">
+    <div className="border-y border-ink/15 bg-blush py-4 sm:py-6 overflow-hidden">
       <div className="flex marquee-track whitespace-nowrap">
         {row.map((t, i) => (
           <span
             key={i}
-            className="font-display italic text-3xl md:text-5xl text-ink mx-10 inline-flex items-center gap-10"
+            className="font-display italic text-xl sm:text-3xl md:text-5xl text-ink mx-5 sm:mx-10 inline-flex items-center gap-5 sm:gap-10"
           >
             {t}
             <span className="text-gold not-italic">✦</span>
