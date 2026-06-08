@@ -947,7 +947,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-ink/10">
-        <div className="max-w-[1500px] mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs tracking-[0.2em] uppercase text-ink-soft">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[0.6rem] sm:text-xs tracking-[0.2em] uppercase text-ink-soft text-center">
           <div>© {new Date().getFullYear()} Hair Magic by Eranga · All rights reserved</div>
           <div>Crafted with care in Sri Lanka</div>
         </div>
