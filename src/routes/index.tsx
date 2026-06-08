@@ -965,12 +965,12 @@ function Location() {
                 </li>
                 <li className="flex items-start gap-4">
                   <Phone className="w-5 h-5 text-gold mt-0.5 shrink-0" />
-                  <a href="tel:+94000000000" className="link-underline">+94 00 000 0000</a>
+                  <a href="tel:+94713740231" className="link-underline">+94 71 374 0231</a>
                 </li>
                 <li className="flex items-start gap-4">
                   <MessageCircle className="w-5 h-5 text-gold mt-0.5 shrink-0" />
                   <a
-                    href="https://wa.me/94000000000"
+                    href="https://wa.me/94713740231"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="link-underline"
@@ -1032,7 +1032,7 @@ function FinalCTA() {
           <p className="editorial-eyebrow text-gold mb-6 sm:mb-8">— Your turn</p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="editorial-headline text-blush text-4xl sm:text-6xl md:text-8xl lg:text-[10rem]">
+          <h2 className="editorial-headline text-blush text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             Ready For Your Next
             <span className="block italic font-serif text-gold">Transformation?</span>
           </h2>
@@ -1040,7 +1040,7 @@ function FinalCTA() {
         <Reveal delay={0.2}>
           <div className="mt-10 sm:mt-14 flex flex-wrap justify-center gap-3 sm:gap-4">
             <a
-              href="https://wa.me/94000000000"
+              href="https://wa.me/94713740231"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-blush text-ink px-6 sm:px-10 py-4 sm:py-5 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-500"
