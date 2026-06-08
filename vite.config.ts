@@ -7,7 +7,10 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  nitro: { preset: "netlify-static" },
+  // Netlify is serving this project as a static SPA via netlify.toml redirects.
+  // Running Nitro's Netlify preset here triggers an extra SSR packaging step that
+  // currently fails on Netlify after the client build has already succeeded.
+  nitro: false,
   tanstackStart: {
     server: { entry: "server" },
   },
