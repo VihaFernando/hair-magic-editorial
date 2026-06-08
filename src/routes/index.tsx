@@ -409,12 +409,12 @@ function Services() {
                     <ArrowUpRight className="w-4 h-4 text-ink" />
                   </div>
                 </div>
-                <div className="mt-6 flex items-start justify-between gap-6">
-                  <h3 className="font-display text-2xl md:text-3xl text-ink leading-tight">
+                <div className="mt-4 sm:mt-6 flex items-start justify-between gap-6">
+                  <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-ink leading-tight">
                     {s.name}
                   </h3>
                 </div>
-                <p className="mt-3 text-sm text-ink-soft leading-relaxed max-w-sm">{s.blurb}</p>
+                <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-ink-soft leading-relaxed max-w-sm">{s.blurb}</p>
               </article>
             </Reveal>
           ))}
