@@ -195,7 +195,7 @@ function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section id="home" ref={ref} className="relative h-screen min-h-[720px] overflow-hidden">
+    <section id="home" ref={ref} className="relative h-[100svh] min-h-[560px] md:min-h-[720px] overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src={heroImg}
@@ -207,18 +207,18 @@ function Hero() {
       </motion.div>
 
       <motion.div style={{ opacity }} className="relative z-10 h-full flex flex-col">
-        <div className="flex-1 flex items-center">
-          <div className="max-w-[1500px] mx-auto px-6 lg:px-10 w-full">
+        <div className="flex-1 flex items-center pt-20 md:pt-0">
+          <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 w-full">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="editorial-eyebrow text-ink-soft mb-6"
+              className="editorial-eyebrow text-ink-soft mb-4 sm:mb-6 text-[0.6rem] sm:text-[0.7rem]"
             >
               ✦ Luxury Hair Studio · Sri Lanka
             </motion.p>
 
-            <h1 className="editorial-headline text-ink text-[14vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.88] max-w-[1300px]">
+            <h1 className="editorial-headline text-ink text-[3.25rem] sm:text-[5rem] md:text-[10vw] lg:text-[8.5vw] leading-[0.88] max-w-[1300px]">
               <SplitReveal text="Where Hair" />
               <span className="block italic font-serif text-gold mt-1">
                 <SplitReveal text="Meets Perfection." delay={0.25} />
@@ -229,24 +229,24 @@ function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
-              className="mt-10 flex flex-col sm:flex-row sm:items-end justify-between gap-8 max-w-[1100px]"
+              className="mt-6 sm:mt-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 max-w-[1100px]"
             >
-              <p className="font-serif text-xl md:text-2xl text-ink-soft max-w-md leading-snug">
+              <p className="font-serif text-base sm:text-xl md:text-2xl text-ink-soft max-w-md leading-snug">
                 Luxury hair transformations <em className="text-gold">by Eranga</em> — crafted with
                 the care of a couture atelier.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <a
                   href="#contact"
-                  className="group inline-flex items-center gap-3 bg-ink text-blush px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
+                  className="group inline-flex items-center gap-3 bg-ink text-blush px-5 py-3 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-ink transition-colors duration-500"
                 >
                   Book Appointment
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#gallery"
-                  className="group inline-flex items-center gap-3 border border-ink text-ink px-8 py-4 text-xs tracking-[0.25em] uppercase hover:bg-ink hover:text-blush transition-colors duration-500"
+                  className="group inline-flex items-center gap-3 border border-ink text-ink px-5 py-3 sm:px-8 sm:py-4 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-ink hover:text-blush transition-colors duration-500"
                 >
                   View Transformations
                 </a>
