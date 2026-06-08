@@ -851,35 +851,35 @@ function Location() {
 
 function FinalCTA() {
   return (
-    <section className="relative bg-ink text-blush py-32 lg:py-48 overflow-hidden">
+    <section className="relative bg-ink text-blush py-24 sm:py-32 lg:py-48 overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img src={g1} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-ink/70" />
       </div>
-      <div className="relative max-w-[1500px] mx-auto px-6 lg:px-10 text-center">
+      <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 text-center">
         <Reveal>
-          <p className="editorial-eyebrow text-gold mb-8">— Your turn</p>
+          <p className="editorial-eyebrow text-gold mb-6 sm:mb-8">— Your turn</p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="editorial-headline text-blush text-6xl md:text-8xl lg:text-[10rem]">
+          <h2 className="editorial-headline text-blush text-4xl sm:text-6xl md:text-8xl lg:text-[10rem]">
             Ready For Your Next
             <span className="block italic font-serif text-gold">Transformation?</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <div className="mt-14 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 sm:mt-14 flex flex-wrap justify-center gap-3 sm:gap-4">
             <a
               href="https://wa.me/94000000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-blush text-ink px-10 py-5 text-xs tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-500"
+              className="group inline-flex items-center gap-3 bg-blush text-ink px-6 sm:px-10 py-4 sm:py-5 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-500"
             >
               Book Appointment
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
-              className="group inline-flex items-center gap-3 border border-blush/40 text-blush px-10 py-5 text-xs tracking-[0.25em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500"
+              className="group inline-flex items-center gap-3 border border-blush/40 text-blush px-6 sm:px-10 py-4 sm:py-5 text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase hover:bg-blush hover:text-ink transition-colors duration-500"
             >
               Contact Us
             </a>
