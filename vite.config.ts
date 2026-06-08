@@ -12,6 +12,10 @@ export default defineConfig({
   // currently fails on Netlify after the client build has already succeeded.
   nitro: false,
   tanstackStart: {
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+    },
     server: { entry: "server" },
   },
 });
