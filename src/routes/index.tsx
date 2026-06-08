@@ -439,18 +439,18 @@ const GALLERY = [
 
 function Gallery() {
   return (
-    <section id="gallery" className="bg-ink text-blush py-28 lg:py-40">
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
+    <section id="gallery" className="bg-ink text-blush py-20 sm:py-28 lg:py-40">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-10 mb-12 sm:mb-20">
           <Reveal>
-            <p className="editorial-eyebrow text-gold mb-6">— Real Results</p>
-            <h2 className="editorial-headline text-blush text-6xl md:text-8xl lg:text-[9rem]">
+            <p className="editorial-eyebrow text-gold mb-4 sm:mb-6">— Real Results</p>
+            <h2 className="editorial-headline text-blush text-4xl sm:text-6xl md:text-8xl lg:text-[9rem]">
               Real
               <span className="block italic font-serif text-gold">Results.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="font-serif text-xl text-blush/70 max-w-md leading-relaxed">
+            <p className="font-serif text-base sm:text-xl text-blush/70 max-w-md leading-relaxed">
               No filters. No retouching. Just real transformations from inside
               the studio.
             </p>
@@ -458,7 +458,7 @@ function Gallery() {
         </div>
 
         {/* Masonry via CSS columns */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 [column-fill:_balance]">
           {GALLERY.map((g, i) => (
             <Reveal key={i} delay={(i % 3) * 0.08} className="mb-6 break-inside-avoid">
               <figure className="group relative hover-zoom">
