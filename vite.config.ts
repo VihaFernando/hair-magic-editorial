@@ -7,6 +7,7 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  nitro: { preset: "netlify-static" },
   tanstackStart: {
     server: { entry: "server" },
   },
