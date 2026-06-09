@@ -111,11 +111,21 @@ function Nav() {
     event.preventDefault();
     setOpen(false);
 
-    const target = document.querySelector(href);
+    const target = document.querySelector<HTMLElement>(href);
     if (!target) return;
 
+    const mobileHeaderOffset = scrolled ? 72 : 92;
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - mobileHeaderOffset);
+    const behavior: ScrollBehavior =
+      "scrollBehavior" in document.documentElement.style ? "smooth" : "auto";
+
     window.requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.scrollTo({ top, behavior });
+      window.setTimeout(() => {
+        if (Math.abs(window.scrollY - top) > 4) {
+          window.scrollTo(0, top);
+        }
+      }, 220);
       window.history.replaceState(null, "", href);
     });
   };
@@ -525,8 +535,8 @@ function Services() {
                     aria-current={i === current ? "true" : undefined}
                     onClick={() => api?.scrollTo(i)}
                     className={`h-px transition-all duration-500 ${i === current
-                        ? "w-10 bg-gold"
-                        : "w-6 bg-ink/20 hover:bg-ink/40"
+                      ? "w-10 bg-gold"
+                      : "w-6 bg-ink/20 hover:bg-ink/40"
                       }`}
                   />
                 ))}
